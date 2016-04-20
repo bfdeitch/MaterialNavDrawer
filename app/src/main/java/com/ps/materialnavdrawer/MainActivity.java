@@ -27,7 +27,9 @@ public class MainActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        drawerLayout.setDrawerListener(drawerToggle);
+        // setDrawerListner has been deprecated use addDrawerListener instead 
+        //drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
         List<String> rows = new ArrayList<>();
