@@ -68,6 +68,25 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
             if (viewType == ROW_TYPE) {
                 ButterKnife.inject(this, itemView);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int position=getAdapterPosition()-1;
+                        // Toast Clicked element ID
+                        Toast.makeText(itemView.getContext(),"post-"+position,Toast.LENGTH_SHORT).show();
+                        // Start New Activity based on item selected
+                        /*if(position==0){
+                            Intent i=new Intent(itemView.getContext(),Dashboard.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            itemView.getContext().startActivity(i);
+                        }else if(position==1){
+                            Intent i=new Intent(itemView.getContext(),Setting.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            itemView.getContext().startActivity(i);
+                        }*/
+                        
+                    }
+                });
             }
         }
     }
